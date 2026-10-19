@@ -1,0 +1,12 @@
+import 'package:get/get.dart';
+import 'package:pocketwrench/features/shared/auth/data/repositories/auth_repository.dart';
+import 'package:pocketwrench/features/shared/auth/view_models/login_view_model.dart';
+
+class LoginBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<LoginViewModel>(
+      () => LoginViewModel(Get.find<AuthRepository>()),
+    );
+  }
+}
